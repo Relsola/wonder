@@ -13,7 +13,7 @@ for (let i = 0; i < 3; i++) element[i].emit();
 ✅
 
 ```JavaScript
-// JavaScript 中 if、for等语句自动对下一行负责
+// JavaScript 中 if、for 等语句自动对下一行负责
 // 但最佳实践应该是哪怕只要一行也应该使用花括号
 if (num > 2) {
   num--;
