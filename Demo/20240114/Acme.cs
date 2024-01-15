@@ -2,34 +2,34 @@
 
 public class Stack<T>
 {
-    Entry _top;
+  Entry _top;
 
-    public void Push(T data)
+  public void Push(T data)
+  {
+    _top = new Entry(_top, data);
+  }
+
+  public T Pop()
+  {
+    if (_top == null)
     {
-        _top = new Entry(_top, data);
+      throw new InvalidOperationException();
     }
+    T result = _top.Data;
+    _top = _top.Next;
 
-    public T Pop()
+    return result;
+  }
+
+  class Entry
+  {
+    public Entry Next { get; set; }
+    public T Data { get; set; }
+
+    public Entry(Entry next, T data)
     {
-        if (_top == null)
-        {
-            throw new InvalidOperationException();
-        }
-        T result = _top.Data;
-        _top = _top.Next;
-
-        return result;
+      Next = next;
+      Data = data;
     }
-
-    class Entry
-    {
-        public Entry Next { get; set; }
-        public T Data { get; set; }
-
-        public Entry(Entry next, T data)
-        {
-            Next = next;
-            Data = data;
-        }
-    }
+  }
 }

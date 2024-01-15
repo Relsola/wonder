@@ -29,3 +29,30 @@ int first = pair.First;
 string two = pair.Second;
 
 Console.WriteLine(first + " " + two);
+
+// 类和基类
+Point a = new(10, 20);
+Point b = new Point3D(10, 20, 30);
+
+EditBox editBox = new();
+IControl control = editBox;
+IDataBound dataBound = editBox;
+Console.WriteLine(editBox);
+Console.WriteLine($"{control},{dataBound}");
+
+var turnip = SomeRootVegetable.Turnip;
+var spring = Seasons.Spring;
+var startingOnEquinox = Seasons.Spring | Seasons.Autumn;
+var theYear = Seasons.All;
+
+Console.WriteLine(turnip);
+Console.WriteLine($"{spring},{startingOnEquinox},{theYear}");
+
+int? optionalInt = default;
+optionalInt = 5;
+string? optionalText = default;
+optionalText = "Hello World";
+Console.WriteLine($"{optionalInt},{optionalText}");
+
+(double Sum, int Count) t2 = (4.5, 3);
+Console.WriteLine($"Sum of {t2.Count} elements is {t2.Sum}.");

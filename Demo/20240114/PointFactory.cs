@@ -1,14 +1,15 @@
 ﻿namespace Learn;
 
+// 迭代器
 public class PointFactory(int numberOfPoints)
 {
-    public IEnumerable<Point> CreatePoints()
+  public IEnumerable<Point> CreatePoints()
+  {
+    var generator = new Random();
+    for (int i = 0; i < numberOfPoints; i++)
     {
-        var generator = new Random();
-        for (int i = 0; i < numberOfPoints; i++)
-        {
-            yield return new Point(generator.Next(), generator.Next());
-        }
+      yield return new Point(generator.Next(), generator.Next());
     }
+  }
 }
 
