@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #app {
+        width: 500px;
+        height: 500px;
+        border: 1px solid red;
+      }
+      #box {
+        width: 200px;
+        height: 200px;
+        background-color: skyblue;
+        text-align: center;
+        line-height: 200px;
+      }
+      #bt {
+        width: 200px;
+        height: 80px;
+        background-color: skyblue;
+        border: 0;
+        position: fixed;
+        left: 50%;
+        bottom: 200px;
+        font-size: 26px;
+      }
+
+      /* 一、绝对定位 + 负margin值 */
+      .a1 {
+        position: relative;
+      }
+      .b1 {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -100px;
+        margin-top: -100px;
+      }
+      /* 二、绝对定位 + transform */
+      .a2 {
+        position: relative;
+      }
+      .b2 {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      /* 绝对定位 + left/right/bottom/top + margin */
+      .a3 {
+        position: relative;
+      }
+      .b3 {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 水平垂直居中布局 -->
+    <div id="app" class="a3">
+      <h1>APP</h1>
+      <div id="box" class="b3">
+        <h1>BOX</h1>
+      </div>
+    </div>
+
+    <button id="bt">切换</button>
+  </body>
+</html>
+
+<script>
+  let num = 1;
+  const text = {};
+  Object.defineProperty(text, 'value', {
+    set: value => (document.getElementById('box').innerHTML = `<h1>${value}</h1>`)
+  });
+  //   text.value = '无居中';
+
+  document.getElementById('bt').addEventListener('click', function (e) {});
+</script>

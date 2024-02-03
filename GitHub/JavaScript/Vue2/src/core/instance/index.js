@@ -8,7 +8,6 @@ function Vue(options) {
   this._init(options);
 }
 
-/** update */
 initMixin(Vue);
 stateMixin(Vue);
 eventsMixin(Vue);
