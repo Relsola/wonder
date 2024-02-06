@@ -7,7 +7,7 @@ import { lifecycleMixin } from './lifecycle';
 function Vue(options) {
   this._init(options);
 }
-/*  */
+
 initMixin(Vue);
 stateMixin(Vue);
 eventsMixin(Vue);
